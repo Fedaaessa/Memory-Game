@@ -1,0 +1,153 @@
+html {
+	box-sizing: border-box;
+}
+
+.peep{
+    border: 3px solid rgb(255, 255, 255);
+   margin: 10px 10px;
+ padding: 2px;
+  
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 400px;
+   
+
+    
+}
+div {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body{
+ 
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(233,232,148,1) 100%);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    color: white;
+    width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0
+
+    
+    
+   
+}
+h3 {
+    text-align: center;
+    margin: 0;
+}
+
+.box{
+    position:absolute;
+    
+    
+  
+}
+.box .square{
+position: fixed;
+backdrop-filter: blur(5px);
+box-shadow: 0 25px 45px rgba(0, 0,0, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.5);
+border-right:1px solid rgba(255, 255, 255, 0.2);
+border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px ;
+animation: animate 10s linear infinite;
+animation-delay: calc(-1s * var(--i));
+}
+@keyframes animate{
+    0% , 100%{
+        transform: translateY(-40px);
+    }
+    50%{
+        transform: translateY(40px);
+    }
+}
+.box .square:nth-child(1){
+top: 150px;
+right: 400px;
+width: 100px;
+height: 100px;
+z-index: 1;
+margin-left: auto;
+}
+
+.box .square:nth-child(2){
+    top: 150px;
+left: 400px;
+width: 120px;
+height: 120px;
+z-index: 2;
+
+}
+
+.box .square:nth-child(3){
+    bottom: 50px;
+right: 400px;
+width: 80px;
+height: 80px;
+z-index: 2;
+margin-left: auto;
+}
+
+.box .square:nth-child(4){
+    bottom: -80px;
+right:300px;
+width: 50px;
+height: 50px;
+margin-left: auto;
+
+}
+.box .square:nth-child(5){
+    top: -80px;
+left: 400px;
+width: 60px;
+height: 60px;
+z-index: 3;
+
+}
+/*
+.toast{
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    max-width: 400px;
+    padding: 6px;
+    background: #cccccc;
+color: #3333;
+font-family: 'Courier New', Courier, monospace;
+text-align: center;
+border: 1px solid white;
+border-radius: 15px;
+box-shadow: 0 0 10px rgb(238,174,202);
+visibility: hidden;
+opacity: 0;
+transition: opacity 0.2s, top 0.2s, visability 0.2s;
+
+}
+.toast--visible{
+    top: 20px;
+    opacity: 1;
+    visibility: visible;
+}
+.toast--success{
+    background: rgba(238,174,202,1);
+    border-color: salmon;
+    color:#ffff;
+}
+.toast--error{
+    background: teal;
+    border-color: red;
+    color: #ffff;
+}
